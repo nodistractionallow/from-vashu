@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+/* ── Global resets for smoothness ── */
+*, *::before, *::after {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  box-sizing: border-box;
+}
+
+html {
+  /* Use dvh so mobile browsers don't count address bar */
+  height: -webkit-fill-available;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  overscroll-behavior: none;
+  background: #4a0018;
+}
+
+/* Prevent video controls from leaking on any browser */
+video::-webkit-media-controls,
+video::-webkit-media-controls-enclosure,
+video::-webkit-media-controls-panel,
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-timeline,
+video::-webkit-media-controls-current-time-display,
+video::-webkit-media-controls-time-remaining-display,
+video::-webkit-media-controls-mute-button,
+video::-webkit-media-controls-toggle-closed-captions-button,
+video::-webkit-media-controls-volume-slider,
+video::-webkit-media-controls-fullscreen-button,
+video::--webkit-media-text-track-display {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+/* Smooth GPU layer for animated elements */
+.gpu {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
